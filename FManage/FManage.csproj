@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Repositry\" />
+    <None Remove="Model\" />
+    <None Remove="Repositry\interfaces\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Utilities\" />
+    <None Remove="MainMenu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositry\" />
+    <Folder Include="Model\" />
+    <Folder Include="Repositry\interfaces\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="MainMenu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="ConsoleTables" Version="2.6.2" />
+    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Testing\Tests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Utilities\DbConnUtil.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+</Project>
